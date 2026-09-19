@@ -1,0 +1,8 @@
+{
+  "name": "Remix The Promise Hotel \u0026 Resort - Luxury Real Estate \u0026 Investment",
+  "description": "Modern high-end luxury real estate \u0026 investment portal for The Promise Hotel \u0026 Resort in Inani, Cox\u0027s Bazar. Featuring 125-Bigha master plan bento grid, contained hero, investment packages, and interactive advisor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

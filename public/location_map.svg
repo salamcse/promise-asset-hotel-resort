@@ -1,0 +1,364 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="100%" height="100%" className="w-full h-full select-none">
+  <defs>
+    <!-- Deep Azure Ocean Gradient -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="55%" y2="100%">
+      <stop offset="0%" stop-color="#023e7d" />
+      <stop offset="25%" stop-color="#00669e" />
+      <stop offset="50%" stop-color="#0096c7" />
+      <stop offset="75%" stop-color="#00b4d8" />
+      <stop offset="100%" stop-color="#48cae4" />
+    </linearGradient>
+
+    <!-- Warm Coastal Shallow Water Gradient -->
+    <linearGradient id="shallowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#48cae4" stop-opacity="0.2" />
+      <stop offset="70%" stop-color="#90e0ef" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#caf0f8" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Tropical Landscape Gradient -->
+    <linearGradient id="terrainGrad" x1="50%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b7d584" />
+      <stop offset="35%" stop-color="#80b958" />
+      <stop offset="70%" stop-color="#4c8d35" />
+      <stop offset="100%" stop-color="#3b7225" />
+    </linearGradient>
+
+    <!-- Golden Sand Gradient -->
+    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e9d8a6" />
+      <stop offset="50%" stop-color="#ee9b00" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#e5ba73" />
+    </linearGradient>
+
+    <!-- Sun Flare in Top Right -->
+    <radialGradient id="sunFlare" cx="95%" cy="5%" r="60%">
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#fef08a" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#fef08a" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#fef08a" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Center Emblem Outer Glow -->
+    <filter id="emblemGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Realistic Card Drop Shadow -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#071b30" flood-opacity="0.28" />
+    </filter>
+
+    <!-- Palm Shadow -->
+    <filter id="palmShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="15" dy="25" stdDeviation="14" flood-color="#001220" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- BASE MAP BACKGROUND (Ocean Canvas) -->
+  <rect width="1500" height="1000" fill="url(#oceanGrad)" />
+
+  <!-- Ocean Waves & Texture -->
+  <g opacity="0.25" stroke="#ffffff" stroke-width="1.5" fill="none">
+    <path d="M 50 150 Q 150 140 250 155 T 450 145 T 650 150" />
+    <path d="M 20 280 Q 180 270 320 285 T 580 275" />
+    <path d="M 80 420 Q 220 405 380 425 T 620 415" />
+    <path d="M 30 590 Q 160 575 340 595 T 590 585" />
+    <path d="M 70 780 Q 240 765 420 790 T 640 775" />
+    <path d="M 40 920 Q 180 905 380 930 T 680 910" />
+  </g>
+
+  <!-- Boats & Watercraft on Ocean -->
+  <!-- Luxury Speedboat 1 -->
+  <g transform="translate(450, 300) rotate(40)" filter="url(#cardShadow)">
+    <path d="M 0 0 L -8 40 L 8 40 Z" fill="#ffffff" />
+    <!-- Boat Wake -->
+    <path d="M -8 40 L -25 90 M 8 40 L 25 90" stroke="#ffffff" stroke-width="2" opacity="0.6" stroke-linecap="round" />
+  </g>
+
+  <!-- Small Sailboat 2 -->
+  <g transform="translate(560, 70) rotate(-15)">
+    <path d="M 0 0 L -4 20 L 4 20 Z" fill="#f8fafc" />
+    <path d="M 0 5 L -10 16 L 0 16 Z" fill="#ffffff" />
+  </g>
+
+  <!-- Small Sailboat 3 -->
+  <g transform="translate(360, 540) rotate(20)">
+    <path d="M 0 0 L -3 16 L 3 16 Z" fill="#f8fafc" />
+    <path d="M 0 4 L 8 14 L 0 14 Z" fill="#ffffff" />
+  </g>
+
+  <!-- Sailboat 4 South -->
+  <g transform="translate(570, 750) rotate(15)">
+    <path d="M 0 0 L -5 24 L 5 24 Z" fill="#f8fafc" />
+    <path d="M 0 6 L -12 20 L 0 20 Z" fill="#ffffff" />
+  </g>
+
+  <!-- TROPICAL LANDMASS & HILLS (Right Side) -->
+  <path d="M 780 0 L 1500 0 L 1500 1000 L 730 1000 C 730 920 760 880 760 810 C 760 740 730 680 740 550 C 750 420 790 350 780 250 C 770 140 740 80 780 0 Z" fill="url(#terrainGrad)" />
+
+  <!-- Tropical Forest Texture Patches & Hill Highlights -->
+  <g opacity="0.15" fill="#ffffff">
+    <ellipse cx="1200" cy="200" rx="220" ry="140" />
+    <ellipse cx="1380" cy="450" rx="260" ry="180" />
+    <ellipse cx="1150" cy="700" rx="240" ry="150" />
+    <ellipse cx="1400" cy="850" rx="280" ry="160" />
+  </g>
+
+  <!-- Forest Tree Clusters (Tiny dots simulating lush canopy) -->
+  <g fill="#2d5a1e" opacity="0.6">
+    <!-- Cluster 1 -->
+    <circle cx="850" cy="180" r="18" /><circle cx="880" cy="190" r="24" /><circle cx="860" cy="220" r="20" />
+    <circle cx="920" cy="170" r="22" /><circle cx="950" cy="210" r="26" /><circle cx="890" cy="240" r="28" />
+    <!-- Cluster 2 -->
+    <circle cx="920" cy="390" r="22" /><circle cx="960" cy="410" r="28" /><circle cx="940" cy="440" r="24" />
+    <circle cx="1020" cy="380" r="30" /><circle cx="1050" cy="420" r="32" /><circle cx="990" cy="450" r="26" />
+    <!-- Cluster 3 -->
+    <circle cx="880" cy="680" r="24" /><circle cx="920" cy="710" r="30" /><circle cx="900" cy="750" r="26" />
+    <circle cx="980" cy="690" r="28" /><circle cx="1020" cy="730" r="34" /><circle cx="950" cy="770" r="30" />
+    <!-- Cluster 4 -->
+    <circle cx="820" cy="880" r="20" /><circle cx="850" cy="910" r="26" /><circle cx="830" cy="940" r="22" />
+    <circle cx="900" cy="890" r="28" /><circle cx="930" cy="930" r="30" /><circle cx="870" cy="960" r="25" />
+  </g>
+
+  <!-- MEANDERING EMERALD RIVER -->
+  <path d="M 830 420 C 910 430 960 490 1020 590 C 1060 650 1130 680 1160 620 C 1200 540 1230 610 1220 690 C 1220 770 1170 800 1180 850 C 1190 920 1240 910 1220 980 C 1210 1000 1220 1000 1230 1000 L 1260 1000 C 1280 940 1270 870 1230 830 C 1200 800 1230 710 1190 640 C 1170 600 1170 550 1130 490 C 1090 440 1010 390 970 300 C 930 240 850 390 830 420 Z" fill="#38bdf8" />
+  <path d="M 830 420 C 910 430 960 490 1020 590 C 1060 650 1130 680 1160 620" stroke="#7dd3fc" stroke-width="4" fill="none" opacity="0.6" />
+
+  <!-- SHALLOW WATER SURF ALONG COAST -->
+  <path d="M 720 0 C 720 80 750 140 760 250 C 770 350 730 420 720 550 C 710 680 740 740 740 810 C 740 880 710 920 710 1000 L 760 1000 C 760 920 790 880 790 810 C 790 740 760 680 770 550 C 780 420 820 350 810 250 C 800 140 770 80 810 0 Z" fill="url(#shallowGrad)" />
+
+  <!-- GOLDEN SAND STRIP (INANI BEACH) -->
+  <path d="M 760 0 C 760 80 790 140 800 250 C 810 350 770 420 760 550 C 750 680 780 740 780 810 C 780 880 750 920 750 1000 L 810 1000 C 810 920 840 880 840 810 C 840 740 810 680 820 550 C 830 420 870 350 860 250 C 850 140 820 80 860 0 Z" fill="url(#sandGrad)" />
+
+  <!-- White Surf Foam Edge -->
+  <path d="M 760 0 C 760 80 790 140 800 250 C 810 350 770 420 760 550 C 750 680 780 740 780 810 C 780 880 750 920 750 1000" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.85" />
+
+  <!-- Wooden Coastal Piers / Jetties -->
+  <path d="M 760 348 L 845 348" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+  <path d="M 760 850 L 845 850" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+
+  <!-- MARINE DRIVE HIGHWAY (Z1098) -->
+  <g id="marine-drive">
+    <!-- Road Base Asphalt -->
+    <path d="M 865 0 C 865 140 845 250 840 380 C 835 500 845 680 845 820 C 845 900 825 960 825 1000" stroke="#475569" stroke-width="16" fill="none" />
+    <path d="M 865 0 C 865 140 845 250 840 380 C 835 500 845 680 845 820 C 845 900 825 960 825 1000" stroke="#64748b" stroke-width="12" fill="none" />
+    <!-- Center Road Dash Marking -->
+    <path d="M 865 0 C 865 140 845 250 840 380 C 835 500 845 680 845 820 C 845 900 825 960 825 1000" stroke="#f1f5f9" stroke-width="2" stroke-dasharray="10,8" fill="none" />
+    
+    <!-- Moving Vehicles on Highway -->
+    <circle cx="862" cy="130" r="4" fill="#ef4444" />
+    <circle cx="848" cy="220" r="4" fill="#3b82f6" />
+    <circle cx="841" cy="460" r="4" fill="#ffffff" />
+    <circle cx="845" cy="640" r="4" fill="#eab308" />
+    <circle cx="832" cy="960" r="4" fill="#ffffff" />
+  </g>
+
+  <!-- Route Highway Badges Z1098 -->
+  <!-- Top Highway Marker -->
+  <g transform="translate(790, 70)" filter="url(#cardShadow)">
+    <rect width="52" height="24" rx="4" fill="#facc15" stroke="#ca8a04" stroke-width="1.5" />
+    <text x="26" y="16" fill="#1e293b" font-family="system-ui, sans-serif" font-size="12" font-weight="900" text-anchor="middle">Z1098</text>
+  </g>
+  <!-- Bottom Highway Marker -->
+  <g transform="translate(820, 790)" filter="url(#cardShadow)">
+    <rect width="52" height="24" rx="4" fill="#facc15" stroke="#ca8a04" stroke-width="1.5" />
+    <text x="26" y="16" fill="#1e293b" font-family="system-ui, sans-serif" font-size="12" font-weight="900" text-anchor="middle">Z1098</text>
+  </g>
+
+  <!-- SUNLIGHT WARMTH OVERLAY (Top Right) -->
+  <rect width="1500" height="1000" fill="url(#sunFlare)" pointer-events="none" />
+
+  <!-- TOP-LEFT CALLIGRAPHY TITLE: "Inani - Your Coastal Escape" -->
+  <g transform="translate(45, 150)">
+    <!-- "Inani" script lettering -->
+    <text x="0" y="80" fill="#38bdf8" font-family="'Brush Script MT', 'Dancing Script', 'Playfair Display', cursive, serif" font-size="105" font-weight="normal" font-style="italic" opacity="0.95" filter="url(#cardShadow)">Inani</text>
+    <!-- Subtitle -->
+    <text x="18" y="125" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="22" font-weight="400" letter-spacing="1">Your Coastal Escape</text>
+    <!-- Gold underline accent -->
+    <path d="M 70 145 Q 115 135 155 145" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- RADIAL CONNECTOR LINES (Dashed Cyan Lines from The Promise) -->
+  <g stroke="#ffffff" stroke-width="2.5" stroke-dasharray="6,6" fill="none" opacity="0.9">
+    <!-- To Inani Beach Resort & Spa -->
+    <path d="M 660 480 C 720 380 850 250 880 140" />
+    <!-- To Ocean Kitchen -->
+    <path d="M 660 480 C 680 360 700 280 710 245" />
+    <!-- To Inani Beach Cox's Bazar -->
+    <path d="M 660 480 C 500 450 400 430 360 420" />
+    <!-- To Inani Beach Coral Point -->
+    <path d="M 660 480 C 520 540 450 580 440 595" />
+    <!-- To Marine Drive Inani -->
+    <path d="M 660 480 C 730 460 780 420 820 380" />
+    <!-- To Inani Royal Resort -->
+    <path d="M 660 480 C 730 500 780 520 835 540" />
+    <!-- To Inani Beach Shore -->
+    <path d="M 660 480 C 660 620 670 700 690 730" />
+    <!-- To Baywatch -->
+    <path d="M 660 480 C 720 720 780 840 830 925" />
+    <!-- To Adventure Sports Center -->
+    <path d="M 660 480 C 850 540 1050 600 1190 635" />
+    <!-- To Towhid -->
+    <path d="M 660 480 C 880 440 1100 400 1240 385" />
+  </g>
+
+  <!-- POINTS OF INTEREST BADGES (Exact recreation with icons & distance tags) -->
+
+  <!-- 1. Top: Inani Beach Resort & Spa (~2.4 km) -->
+  <g transform="translate(865, 105)" filter="url(#cardShadow)">
+    <rect width="165" height="74" rx="37" fill="#ffffff" />
+    <!-- Red circle icon -->
+    <circle cx="37" cy="37" r="23" fill="#e11d48" />
+    <!-- Hotel Building Icon -->
+    <path d="M 28 46 L 28 30 L 46 30 L 46 46 M 34 30 L 34 46 M 40 30 L 40 46 M 31 34 L 43 34 M 31 39 L 43 39" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" />
+    <text x="70" y="32" fill="#0f172a" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Inani Beach</text>
+    <text x="70" y="49" fill="#334155" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Resort &amp; Spa</text>
+    <text x="70" y="65" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~2.4 km</text>
+  </g>
+
+  <!-- 2. Ocean Kitchen, Cox's Bazar (~1.2 km) -->
+  <g transform="translate(555, 180)" filter="url(#cardShadow)">
+    <rect width="180" height="74" rx="37" fill="#ffffff" />
+    <circle cx="143" cy="37" r="23" fill="#ea580c" />
+    <!-- Fork & Knife -->
+    <path d="M 137 28 L 137 46 M 149 28 L 149 46 M 134 28 L 140 28 M 146 28 L 152 28" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+    <text x="22" y="31" fill="#0f172a" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Ocean Kitchen,</text>
+    <text x="22" y="47" fill="#334155" font-family="system-ui, sans-serif" font-size="12">Cox's Bazar</text>
+    <text x="22" y="63" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~1.2 km</text>
+  </g>
+
+  <!-- 3. Inani Beach, Cox's Bazar (~500 m) -->
+  <g transform="translate(208, 385)" filter="url(#cardShadow)">
+    <rect width="180" height="74" rx="37" fill="#ffffff" />
+    <circle cx="143" cy="37" r="23" fill="#e11d48" />
+    <!-- Camera Icon -->
+    <path d="M 134 33 L 136 30 L 150 30 L 152 33 L 155 33 A 2 2 0 0 1 157 35 L 157 43 A 2 2 0 0 1 155 45 L 131 45 A 2 2 0 0 1 129 43 L 129 35 A 2 2 0 0 1 131 33 Z M 143 41 A 3.5 3.5 0 1 0 143 34 A 3.5 3.5 0 0 0 143 41 Z" fill="#ffffff" />
+    <text x="22" y="32" fill="#0f172a" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Inani Beach,</text>
+    <text x="22" y="48" fill="#334155" font-family="system-ui, sans-serif" font-size="12">Cox's Bazar</text>
+    <text x="22" y="64" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~500 m</text>
+  </g>
+
+  <!-- 4. Inani Beach, Coral Point (~900 m) -->
+  <g transform="translate(302, 560)" filter="url(#cardShadow)">
+    <rect width="180" height="74" rx="37" fill="#ffffff" />
+    <circle cx="143" cy="37" r="23" fill="#e11d48" />
+    <path d="M 134 33 L 136 30 L 150 30 L 152 33 L 155 33 A 2 2 0 0 1 157 35 L 157 43 A 2 2 0 0 1 155 45 L 131 45 A 2 2 0 0 1 129 43 L 129 35 A 2 2 0 0 1 131 33 Z M 143 41 A 3.5 3.5 0 1 0 143 34 A 3.5 3.5 0 0 0 143 41 Z" fill="#ffffff" />
+    <text x="22" y="32" fill="#0f172a" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Inani Beach,</text>
+    <text x="22" y="48" fill="#334155" font-family="system-ui, sans-serif" font-size="12">Coral Point</text>
+    <text x="22" y="64" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~900 m</text>
+  </g>
+
+  <!-- 5. Marine Drive, Inani (~600 m) -->
+  <g transform="translate(820, 355)" filter="url(#cardShadow)">
+    <rect width="195" height="60" rx="30" fill="#ffffff" />
+    <circle cx="30" cy="30" r="18" fill="#e11d48" />
+    <circle cx="30" cy="30" r="7" fill="#ffffff" />
+    <text x="58" y="27" fill="#0f172a" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Marine Drive, Inani</text>
+    <text x="58" y="46" fill="#0284c7" font-family="system-ui, sans-serif" font-size="13" font-weight="800">~600 m</text>
+  </g>
+
+  <!-- 6. Inani Royal Resort Limited (~800 m) -->
+  <g transform="translate(825, 515)" filter="url(#cardShadow)">
+    <rect width="188" height="74" rx="37" fill="#ffffff" />
+    <circle cx="37" cy="37" r="23" fill="#e11d48" />
+    <path d="M 28 46 L 28 30 L 46 30 L 46 46 M 34 30 L 34 46 M 40 30 L 40 46" stroke="#ffffff" stroke-width="1.8" fill="none" />
+    <text x="68" y="32" fill="#0f172a" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Inani Royal</text>
+    <text x="68" y="48" fill="#334155" font-family="system-ui, sans-serif" font-size="12">Resort Limited</text>
+    <text x="68" y="64" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~800 m</text>
+  </g>
+
+  <!-- 7. Inani Beach Scenic Shore (~700 m) -->
+  <g transform="translate(665, 700)" filter="url(#cardShadow)">
+    <rect width="195" height="84" rx="42" fill="#ffffff" />
+    <circle cx="38" cy="42" r="23" fill="#f472b6" />
+    <!-- Umbrella / Waves Icon -->
+    <path d="M 28 43 Q 38 32 48 43 M 38 33 L 38 49" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
+    <text x="68" y="28" fill="#0f172a" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Inani Beach</text>
+    <text x="68" y="44" fill="#475569" font-family="system-ui, sans-serif" font-size="11">Scenic, rocky shore</text>
+    <text x="68" y="58" fill="#475569" font-family="system-ui, sans-serif" font-size="11">with quaint boats</text>
+    <text x="68" y="74" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~700 m</text>
+  </g>
+
+  <!-- 8. Baywatch (~2.6 km) -->
+  <g transform="translate(830, 910)" filter="url(#cardShadow)">
+    <rect width="145" height="56" rx="28" fill="#ffffff" />
+    <circle cx="28" cy="28" r="18" fill="#db2777" />
+    <path d="M 21 28 L 35 28 M 28 21 L 28 35" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+    <text x="54" y="26" fill="#db2777" font-family="system-ui, sans-serif" font-size="13" font-weight="800">Baywatch</text>
+    <text x="54" y="44" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~2.6 km</text>
+  </g>
+
+  <!-- 9. Towhid (~2.8 km) -->
+  <g transform="translate(1205, 360)" filter="url(#cardShadow)">
+    <rect width="130" height="56" rx="28" fill="#ffffff" />
+    <circle cx="28" cy="28" r="18" fill="#64748b" />
+    <circle cx="28" cy="28" r="7" fill="#ffffff" />
+    <text x="54" y="26" fill="#334155" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Towhid</text>
+    <text x="54" y="44" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~2.8 km</text>
+  </g>
+
+  <!-- 10. অ্যাডভেঞ্চার স্পোর্টস / Adventure Sports Center (~2.5 km) -->
+  <g transform="translate(1185, 600)" filter="url(#cardShadow)">
+    <rect width="230" height="74" rx="37" fill="#ffffff" />
+    <circle cx="37" cy="37" r="23" fill="#059669" />
+    <circle cx="37" cy="37" r="9" fill="#ffffff" />
+    <text x="70" y="30" fill="#065f46" font-family="system-ui, sans-serif" font-size="14" font-weight="700">অ্যাডভেঞ্চার স্পোর্টস</text>
+    <text x="70" y="47" fill="#047857" font-family="system-ui, sans-serif" font-size="12">Adventure sports center</text>
+    <text x="70" y="64" fill="#0284c7" font-family="system-ui, sans-serif" font-size="12" font-weight="800">~2.5 km</text>
+  </g>
+
+  <!-- PROMINENT RESORT EMBLEM: THE PROMISE (Center of the Map) -->
+  <g id="the-promise-center" transform="translate(660, 480)">
+    
+    <!-- Outer Aqua Glow Rings -->
+    <circle cx="0" cy="0" r="95" fill="#38bdf8" opacity="0.3" filter="url(#emblemGlow)" />
+    <circle cx="0" cy="0" r="82" fill="#ffffff" stroke="#38bdf8" stroke-width="4" filter="url(#cardShadow)" />
+    
+    <!-- Inner Dark Navy Backdrop -->
+    <circle cx="0" cy="0" r="74" fill="#071b30" />
+
+    <!-- Architectural Sail Hotel & Palm Tree Emblem -->
+    <g transform="translate(-45, -50) scale(0.9)">
+      <!-- Sea Waves below building -->
+      <path d="M 5 85 Q 30 75 55 85 T 100 85" stroke="#38bdf8" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 10 95 Q 40 85 70 95 T 95 95" stroke="#0ea5e9" stroke-width="3" fill="none" stroke-linecap="round"/>
+      
+      <!-- Palm Tree -->
+      <path d="M 78 50 Q 82 68 85 85" stroke="#10b981" stroke-width="3.5" fill="none" stroke-linecap="round" />
+      <path d="M 78 50 Q 65 42 60 48" stroke="#10b981" stroke-width="2.5" fill="none" />
+      <path d="M 78 50 Q 88 40 95 46" stroke="#10b981" stroke-width="2.5" fill="none" />
+      <path d="M 78 50 Q 75 35 78 32" stroke="#10b981" stroke-width="2.5" fill="none" />
+
+      <!-- Iconic Sail Architecture -->
+      <path d="M 25 80 C 35 50 48 30 50 15 C 53 35 65 55 75 80 Z" fill="#ffffff" />
+      <path d="M 50 15 L 50 80" stroke="#0284c7" stroke-width="2" />
+      <path d="M 32 60 L 50 65 L 68 60" stroke="#0284c7" stroke-width="1.5" />
+      <path d="M 38 42 L 50 45 L 62 42" stroke="#0284c7" stroke-width="1.5" />
+    </g>
+
+    <!-- Glowing Pill: THE PROMISE -->
+    <g transform="translate(-90, 60)" filter="url(#cardShadow)">
+      <rect width="180" height="38" rx="8" fill="#071b30" stroke="#38bdf8" stroke-width="2.5" />
+      <text x="90" y="24" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="900" letter-spacing="2" text-anchor="middle">THE PROMISE</text>
+    </g>
+  </g>
+
+  <!-- FOREGROUND TROPICAL PALM FRONDS (Bottom-Left Corner) -->
+  <g id="foreground-palms" transform="translate(-50, 650)" filter="url(#palmShadow)" opacity="0.95">
+    <!-- Main stem 1 -->
+    <path d="M 0 350 Q 150 200 350 100" stroke="#14532d" stroke-width="8" fill="none" stroke-linecap="round" />
+    <!-- Leaf Fronds -->
+    <path d="M 120 230 Q 140 180 180 160 M 160 200 Q 190 150 240 130 M 200 175 Q 240 120 300 100 M 240 150 Q 290 90 350 70 M 280 130 Q 340 70 410 60" stroke="#16a34a" stroke-width="5" stroke-linecap="round" fill="none" />
+    <path d="M 100 250 Q 110 310 140 340 M 140 220 Q 160 280 200 310 M 180 190 Q 210 250 260 280 M 220 165 Q 260 220 320 240 M 260 140 Q 310 190 370 210" stroke="#22c55e" stroke-width="4.5" stroke-linecap="round" fill="none" />
+    
+    <!-- Secondary stem 2 -->
+    <path d="M 0 300 Q 100 150 280 80" stroke="#14532d" stroke-width="6" fill="none" stroke-linecap="round" />
+    <path d="M 80 180 Q 90 120 130 100 M 120 150 Q 140 90 190 70 M 160 125 Q 190 70 250 50 M 200 100 Q 240 50 310 30" stroke="#15803d" stroke-width="4" stroke-linecap="round" fill="none" />
+  </g>
+
+</svg>
