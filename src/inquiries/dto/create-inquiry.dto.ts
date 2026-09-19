@@ -17,7 +17,7 @@ export class CreateInquiryDto {
   phone: string;
 
   @IsOptional()
-  @IsEmail()
+  @IsString()
   email?: string;
 
   @IsOptional()
