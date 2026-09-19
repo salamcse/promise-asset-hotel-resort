@@ -1,20 +1,26 @@
 import {
-  IsNotEmpty,
-  IsString,
   IsOptional,
-  IsEmail,
+  IsString,
   IsNumber,
   Min,
 } from 'class-validator';
 
 export class CreateInquiryDto {
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  name: string;
+  name?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  phone: string;
+  fullName?: string;
+
+  @IsOptional()
+  @IsString()
+  phone?: string;
+
+  @IsOptional()
+  @IsString()
+  mobileNumber?: string;
 
   @IsOptional()
   @IsString()
@@ -22,7 +28,15 @@ export class CreateInquiryDto {
 
   @IsOptional()
   @IsString()
+  emailId?: string;
+
+  @IsOptional()
+  @IsString()
   packageType?: string;
+
+  @IsOptional()
+  @IsString()
+  packageId?: string;
 
   @IsOptional()
   @IsNumber()
@@ -32,4 +46,12 @@ export class CreateInquiryDto {
   @IsOptional()
   @IsString()
   message?: string;
+
+  @IsOptional()
+  @IsString()
+  notes?: string;
+
+  @IsOptional()
+  @IsString()
+  description?: string;
 }

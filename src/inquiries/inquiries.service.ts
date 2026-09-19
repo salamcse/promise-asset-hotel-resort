@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Inquiry } from './inquiry.entity';
@@ -7,18 +7,40 @@ import { UpdateInquiryDto } from './dto/update-inquiry.dto';
 
 @Injectable()
 export class InquiriesService {
+  private readonly logger = new Logger(InquiriesService.name);
+
   constructor(
     @InjectRepository(Inquiry)
     private readonly inquiryRepository: Repository<Inquiry>,
   ) {}
 
   async create(createInquiryDto: CreateInquiryDto): Promise<Inquiry> {
+    const rawName = createInquiryDto.name || createInquiryDto.fullName || 'Anonymous Investor';
+    const rawPhone = createInquiryDto.phone || createInquiryDto.mobileNumber || 'N/A';
+    const rawEmail = createInquiryDto.email || createInquiryDto.emailId || null;
+    const rawPackage = createInquiryDto.packageType || createInquiryDto.packageId || 'General Inquiry';
+    const rawMessage = createInquiryDto.message || createInquiryDto.description || createInquiryDto.notes || null;
+    const shareCount = createInquiryDto.shareCount ? Number(createInquiryDto.shareCount) : 1;
+
+    this.logger.log(`📥 Processing inquiry for: ${rawName} (${rawPhone}) [${rawPackage}]`);
+
     const inquiry = this.inquiryRepository.create({
-      ...createInquiryDto,
-      shareCount: createInquiryDto.shareCount || 1,
-      packageType: createInquiryDto.packageType || 'General Inquiry',
+      name: rawName.trim().slice(0, 150),
+      phone: rawPhone.trim().slice(0, 50),
+      email: rawEmail ? rawEmail.trim().slice(0, 150) : null,
+      packageType: rawPackage.trim().slice(0, 250),
+      shareCount: isNaN(shareCount) || shareCount < 1 ? 1 : shareCount,
+      message: rawMessage ? rawMessage.trim() : null,
     });
-    return await this.inquiryRepository.save(inquiry);
+
+    try {
+      const saved = await this.inquiryRepository.save(inquiry);
+      this.logger.log(`✅ Inquiry persisted successfully with ID #${saved.id}`);
+      return saved;
+    } catch (err: any) {
+      this.logger.error(`❌ Error saving inquiry to MySQL: ${err.message}`, err.stack);
+      throw err;
+    }
   }
 
   async findAll(): Promise<Inquiry[]> {

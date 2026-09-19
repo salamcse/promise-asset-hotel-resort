@@ -27,7 +27,7 @@ export class Inquiry {
   @Column({ type: 'varchar', length: 150, nullable: true })
   email: string | null;
 
-  @Column({ type: 'varchar', length: 100, default: 'General Inquiry' })
+  @Column({ type: 'varchar', length: 255, default: 'General Inquiry' })
   packageType: string;
 
   @Column({ type: 'int', default: 1 })

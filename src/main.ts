@@ -21,14 +21,9 @@ async function bootstrap() {
     }),
   );
 
-  // Enable CORS for frontend applications
+  // Enable CORS for frontend applications (supports localhost:3005, 3000, 127.0.0.1, etc.)
   app.enableCors({
-    origin: [
-      'http://localhost:3005',
-      'http://127.0.0.1:3005',
-      'http://localhost:3000',
-      'http://127.0.0.1:3000',
-    ],
+    origin: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
